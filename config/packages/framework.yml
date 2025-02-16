@@ -1,0 +1,6 @@
+services:
+framework:
+  assets:
+    packages:
+      tournaments.logo:
+        base_path: '%tournaments.logo.storage.path%'

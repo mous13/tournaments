@@ -1,0 +1,2 @@
+parameters:
+    tournaments.logo.storage.path: '/tournaments/storage/logos'

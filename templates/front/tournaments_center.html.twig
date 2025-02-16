@@ -1,0 +1,33 @@
+{% extends '@Forumify/frontend/base.html.twig' %}
+{% block body %}
+    <style>
+        .test .btn-link {
+            width:100%;
+            border-radius:0;
+        }
+    </style>
+        <div class="mb-5">Tournaments Center</div>
+        <div class="grid-xs-1 grid-sm-1 grid-md-12 grid-lg-12 grid-xl-12 gap-4" {{ stimulus_controller('forumify/forumify-platform/tabs') }}>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-title">Navigation</div>
+                        <div class="test" role="tablist" {{ stimulus_target('forumify/forumify-platform/tabs', 'tabs') }}>
+                            {% block tabs %}
+                                <a class="btn-link" data-tab-id="tournaments">Tournaments</a>
+                                <a class="btn-link" data-tab-id="teams">Teams</a>
+                            {% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 card border" {{ stimulus_target('forumify/forumify-platform/tabs', 'tabPanels') }}>
+                {% block Tabpanels %}
+                    <div id="tournaments">
+                        {% include '@VanguardTournaments/front/tournaments/tournaments_list.html.twig' %}
+                    </div>
+                    <div id="teams">
+                        {% include '@VanguardTournaments/front/teams/teams_list.html.twig' %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+{% endblock %}

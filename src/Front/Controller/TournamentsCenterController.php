@@ -7,17 +7,17 @@ namespace Vanguard\Tournaments\Front\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-#[Route('/tournaments', 'tournaments')]
-class TournamentsController extends AbstractController
+
+class TournamentsCenterController extends AbstractController
 {
     public function __construct(
     ) {
     }
 
-    #[Route('/list', name: '_list')]
-    public function list(): Response
+    #[Route('/center', name: 'center')]
+    public function __invoke(): Response
     {
-        return $this->render('', [
+        return $this->render('@VanguardTournaments/front/tournaments_center.html.twig', [
         ]);
     }
 }

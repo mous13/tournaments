@@ -5,5 +5,5 @@ doctrine:
         is_bundle: false
         type: attribute
         dir: '%kernel.project_dir%/vendor/vanguard/tournaments/src/Core/Entity'
-        prefix: Vanguard\tournaments\Core\Entity
+        prefix: Vanguard\Tournaments\Core\Entity
         alias: tournamentsEntity
