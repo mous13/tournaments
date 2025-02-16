@@ -40,8 +40,15 @@ class TournamentType extends AbstractType
         }
 
         $builder
-            ->add('name', TextType::class, [
-                'label' => 'vanguard.awards.admin.form.name'
+            ->add('name', TextType::class, [])
+            ->add('visibility', ChoiceType::class, [
+                'label' => 'Visibility',
+                'help' => 'Invite only or public?',
+                'choices' =>
+                    [
+                        'Invite Only' => 'invite',
+                        'Public' => 'public',
+                    ]
             ])
             ->add('participantType', ChoiceType::class, [
                 'label' => 'Participant Type',
