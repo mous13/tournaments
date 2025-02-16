@@ -1,0 +1,9 @@
+doctrine:
+  orm:
+    mappings:
+      tournaments:
+        is_bundle: false
+        type: attribute
+        dir: '%kernel.project_dir%/vendor/vanguard/tournaments/src/Core/Entity'
+        prefix: Vanguard\tournaments\Core\Entity
+        alias: tournamentsEntity

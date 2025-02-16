@@ -1,0 +1,3 @@
+doctrine_migrations:
+    migrations_paths:
+        'TournamentsDoctrineMigrations': '%kernel.project_dir%/vendor/vanguard/Tournaments/migrations'

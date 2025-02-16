@@ -1,0 +1,19 @@
+{
+  "name": "vanguard/tournaments",
+  "type": "forumify-plugin",
+  "description": "Tournaments Plugin",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "version": "0.0.1",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Vanguard\\Tournaments\\": "src/"
+    }
+  },
+  "extra": {
+    "forumify-plugin-class": "Vanguard\\Tournaments\\VanguardTournaments"
+  }
+
+}

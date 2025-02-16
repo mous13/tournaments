@@ -1,0 +1,6 @@
+{% embed '@Forumify/components/menu.html.twig' with { placement: 'bottom-start' } %}
+    {% block button_text %}{{ name }}{% endblock %}
+    {% block menu_items %}
+        <a class="btn-link" href="{{ path('cad_regulations') }}">Tournaments</a>
+    {% endblock %}
+{% endembed %}

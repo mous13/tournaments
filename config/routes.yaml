@@ -1,0 +1,12 @@
+admin:
+  resource: ../src/Admin/Controller
+  type: attribute
+  name_prefix: tournaments_admin_
+  prefix: admin/tournaments/
+
+front:
+  resource: ../src/Front/Controller
+  type: attribute
+  prefix: tournaments/
+  name_prefix: tournaments_
+
