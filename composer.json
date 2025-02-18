@@ -1,5 +1,5 @@
 {
-  "name": "vanguard-php/tournaments",
+  "name": "citadel/tournaments",
   "type": "forumify-plugin",
   "description": "Tournaments Plugin",
   "minimum-stability": "stable",
