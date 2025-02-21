@@ -25,12 +25,14 @@
                 </a>
             </div>
             <div class="flex flex-row">
-                <div class="card border text-center w-25">{{ match.participantOne ? match.participantOne.user.username : 'TBD' }}</div>
-                <div class="card border text-center w-5">{{ match.scoreone }}</div>
+                <div class="card border text-center w-25 {% if match.winner == match.participantOne %} text-bold {% endif %}">{{ match.participantOne ? match.participantOne.user.username : 'TBD' }}
+                </div>
+                <div class="card border text-center w-5 {% if match.winner == match.participantOne %} text-bold {% endif %}">{{ match.scoreone }}</div>
             </div>
             <div class="flex flex-row">
-                <div class="card border text-center w-25">{{ match.participantTwo ? match.participantTwo.user.username : 'TBD' }}</div>
-                <div class="card border text-center w-5">{{ match.scoretwo }}</div>
+                <div class="card border text-center w-25{% if match.winner == match.participantTwo %} text-bold {% endif %}">{{ match.participantTwo ? match.participantTwo.user.username : 'TBD' }}
+                </div>
+                <div class="card border text-center w-5 {% if match.winner == match.participantTwo %} text-bold {% endif %}">{{ match.scoretwo }}</div>
             </div>
         </div>
     {% endfor %}
