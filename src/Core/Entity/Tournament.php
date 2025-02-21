@@ -45,6 +45,9 @@ class Tournament
     #[ORM\Column(length: 255,  nullable: true)]
     private ?string $visibility = null;
 
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $participantLimit = null;
+
     public function __construct()
     {
         $this->createdAt = new DateTime();
@@ -150,5 +153,15 @@ class Tournament
     public function setVisibility(?string $visibility): void
     {
         $this->visibility = $visibility;
+    }
+
+    public function getParticipantLimit(): ?int
+    {
+        return $this->participantLimit;
+    }
+
+    public function setParticipantLimit(?int $participantLimit): void
+    {
+        $this->participantLimit = $participantLimit;
     }
 }

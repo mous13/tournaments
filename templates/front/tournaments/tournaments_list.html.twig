@@ -1,23 +1,29 @@
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-<div class="grid-xs-1 grid-sm-1 grid-md-12 grid-lg-12 grid-xl-12 gap-4">
-        <div class="col-10">Tournaments</div>
+<div class="grid-xs-1 grid-sm-1 grid-md-12 grid-lg-12 grid-xl-12 gap-4 mb-2">
+        <div class="col-10 text-subtitle">Tournaments</div>
         <div class="col-2 flex justify-end">
-            <a class="btn-primary" href="{{ path('tournaments_tournaments_new') }}">
-                <i class="ph ph-plus"></i>
+            <a class="btn-icon" href="{{ path('tournaments_tournaments_new') }}">
                 New Tournament
+                <i class="ph ph-plus"></i>
             </a>
 
         </div>
     </div>
 
     {% for tournament in tournaments %}
-        <div class="card mb-5">
+    <a href="{{ path('tournaments_tournaments_tournament', {'id': tournament.id}) }}" class=" btn-link test w-100 mb-2">
+        <div class="card ">
             <div class="card-body flex flex-col">
                 <div class="flex flex-row">
-                    <div class="w-50">
+                    <div class="w-80">
                         {{ tournament.name }}
-                        {% if tournament.visibility == "invite" %}<i class="ph ph-lock-simple" title="Invite Only"></i>{% else %}<i class="ph ph-lock-simple-open" title="Public"></i>{% endif %}</div>
+                        {% if tournament.visibility == "invite" %}<i class="ph ph-lock-simple" title="Invite Only"></i>{% else %}<i class="ph ph-lock-simple-open" title="Public"></i>{% endif %}
+                    </div>
+                    <div class="w-20 flex justify-end">
+                        {{ tournament.status }}
+                    </div>
                 </div>
             </div>
         </div>
+    </a>
     {% endfor %}

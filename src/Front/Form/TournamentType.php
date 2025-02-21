@@ -59,6 +59,28 @@ class TournamentType extends AbstractType
                         'Teams' => 'teams',
                     ]
             ])
+            ->add('participantLimit', ChoiceType::class, [
+                'label' => 'Participant Limit',
+                'help' => 'Is this tournament for users vs users or teams vs teams?',
+                'choices' =>
+                    [
+                        '2' => '2',
+                        '4' => '4',
+                        '6' => '6',
+                        '8' => '8',
+                        '10' => '10',
+                        '12' => '12',
+                        '14' => '14',
+                        '16' => '16',
+                        '18' => '18',
+                        '20' => '20',
+                        '22' => '22',
+                        '24' => '24',
+                        '26' => '26',
+                        '28' => '28',
+                        '30' => '30',
+                    ]
+            ])
             ->add('image', FileType::class, [
                 'label' => 'vanguard.awards.admin.form.image',
                 'required' => false,

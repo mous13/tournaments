@@ -1,0 +1,40 @@
+{% extends '@Forumify/frontend/base.html.twig' %}
+{% block body %}
+    <style>
+        .border {
+            border-radius:0px;
+        }
+    </style>
+    {% if tournament.status == 'Preparing' %}
+        <a href="{{ path('tournaments_tournaments_join', {'id': tournament.id}) }}" class="btn btn-primary">
+            Join Tournament
+        </a>
+        <a href="{{ path('tournaments_tournaments_generate', {'id': tournament.id}) }}" class="btn btn-primary">
+            Generate Bracket
+        </a>
+    {% endif %}
+    <h2>{{ tournament.name }} Bracket</h2>
+
+    <div class="grid-4">
+<div class="flex flex-col">
+    {% for match in tournament.matches %}
+        <div class="flex mb-5 flex-col">
+            <div class="w-1">
+                <a href="{{ path('tournaments_tournaments_update', {'id': match.id}) }}" class=" btn btn-icon">
+                    <i class="ph ph-crown-simple"></i>
+                </a>
+            </div>
+            <div class="flex flex-row">
+                <div class="card border text-center w-25">{{ match.participantOne ? match.participantOne.user.username : 'TBD' }}</div>
+                <div class="card border text-center w-5">{{ match.scoreone }}</div>
+            </div>
+            <div class="flex flex-row">
+                <div class="card border text-center w-25">{{ match.participantTwo ? match.participantTwo.user.username : 'TBD' }}</div>
+                <div class="card border text-center w-5">{{ match.scoretwo }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+    </div>
+{% endblock %}
+

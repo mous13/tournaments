@@ -4,8 +4,7 @@ namespace Vanguard\Tournaments\Core\Entity;
 
 
 use Doctrine\ORM\Mapping as ORM;
-use Forumify\Core\Entity\User;
-use Vanguard\Tournaments\Core\Repository\TournamentRepository;
+use Vanguard\Tournaments\Core\Repository\TournamentMatchRepository;
 
 #[ORM\Entity(repositoryClass: TournamentMatchRepository::class)]
 #[ORM\Table(name: "tournaments_tournament_matches")]
@@ -41,6 +40,17 @@ class TournamentMatch
     #[ORM\ManyToOne(targetEntity: TournamentParticipant::class)]
     #[ORM\JoinColumn(nullable: true)]
     private ?TournamentParticipant $winner = null;
+
+    #[ORM\Column(type: 'integer')]
+    private int $position = 0;
+
+    #[ORM\ManyToOne(targetEntity: self::class)]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?self $previousMatchOne = null;
+
+    #[ORM\ManyToOne(targetEntity: self::class)]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?self $previousMatchTwo = null;
 
     public function getId(): ?int
     {
@@ -120,5 +130,35 @@ class TournamentMatch
     public function setWinner(?TournamentParticipant $winner): void
     {
         $this->winner = $winner;
+    }
+
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): void
+    {
+        $this->position = $position;
+    }
+
+    public function getPreviousMatchOne(): ?TournamentMatch
+    {
+        return $this->previousMatchOne;
+    }
+
+    public function setPreviousMatchOne(?TournamentMatch $previousMatchOne): void
+    {
+        $this->previousMatchOne = $previousMatchOne;
+    }
+
+    public function getPreviousMatchTwo(): ?TournamentMatch
+    {
+        return $this->previousMatchTwo;
+    }
+
+    public function setPreviousMatchTwo(?TournamentMatch $previousMatchTwo): void
+    {
+        $this->previousMatchTwo = $previousMatchTwo;
     }
 }

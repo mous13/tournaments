@@ -12,13 +12,6 @@ use Vanguard\Tournaments\Core\Repository\TournamentRepository;
 class TournamentsCenterController extends AbstractController
 {
 
-    private const STATUS = [
-        'not_started' => 'Not Started',
-        'preparing'   => 'Preparing',
-        'in_progress' => 'In Progress',
-        'finished'    => 'Finished',
-    ];
-
     public function __construct(
         private readonly TournamentRepository $tournamentRepository,
     ) {
